@@ -2,13 +2,13 @@
 
 A comprehensive project for transcribing dental appointment conversations using Whisper v3 Large Turbo and evaluating transcription quality through multiple medical-domain-specific accuracy metrics.
 
-## 📋 Project Overview
+## Project Overview
 
 This project simulates doctor-patient dental appointment conversations, records them as audio, transcribes the audio using Groq's Whisper v3 Large Turbo model, and evaluates the transcription quality using various metrics tailored for medical/dental contexts.
 
 The main goal is to evaluate the quality of automatic speech-to-text transcription in a medical/dental context, focusing on accuracy of medical terminology, medications, measurements, and other critical information.
 
-## ✨ Features
+## Features
 
 - **Audio Transcription**: Transcribe dental conversation audio files using Whisper v3 Large Turbo via Groq API
 - **Comprehensive Metrics**: Evaluate transcription quality using multiple domain-specific metrics:
@@ -22,7 +22,7 @@ The main goal is to evaluate the quality of automatic speech-to-text transcripti
   - Unit Accuracy
   - Sentence Count Difference
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 dentist_project/
@@ -56,50 +56,9 @@ dentist_project/
 └── README.md
 ```
 
-## 🔧 Prerequisites
-
-- Python 3.7 or higher
-- Groq API key (get one at [console.groq.com](https://console.groq.com))
-- Required Python packages:
-  - `groq` - Groq API client
-  - `jiwer` - For WER and CER calculations
-
-## 📦 Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/L-vishnupriya/Cornet_Task.git
-   cd Cornet_Task
    ```
 
-2. **Install required packages:**
-   ```bash
-   pip install groq jiwer
-   ```
-
-3. **Set up environment variable:**
-   
-   On Windows (PowerShell):
-   ```powershell
-   $env:GROQ_API_KEY="your_groq_api_key_here"
-   ```
-   
-   On Windows (Command Prompt):
-   ```cmd
-   set GROQ_API_KEY=your_groq_api_key_here
-   ```
-   
-   On Linux/Mac:
-   ```bash
-   export GROQ_API_KEY="your_groq_api_key_here"
-   ```
-   
-   Or create a `.env` file (make sure to add it to `.gitignore`):
-   ```
-   GROQ_API_KEY=your_groq_api_key_here
-   ```
-
-## 🚀 Usage
+## Usage
 
 ### Step 1: Prepare Conversations
 
@@ -161,28 +120,3 @@ python wer.py && python cer.py && python medical_term_error_rate.py && python me
 - **Unit Accuracy**: Ensures measurement units are transcribed correctly
 - **Sentence Count Difference**: Compares the number of sentences between ground truth and transcript
 
-## 🔐 Security Note
-
-**Important:** Never commit API keys or secrets to the repository. The project uses environment variables for the Groq API key. Make sure to:
-- Set the `GROQ_API_KEY` as an environment variable
-- Never hardcode API keys in source files
-- Add `.env` files to `.gitignore` if you use them
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is open source and available for educational and research purposes.
-
-## 👤 Author
-
-**L-vishnupriya**
-
-- GitHub: [@L-vishnupriya](https://github.com/L-vishnupriya)
-
-## 🔗 Links
-
-- Repository: [https://github.com/L-vishnupriya/Cornet_Task](https://github.com/L-vishnupriya/Cornet_Task)
-- Groq API: [https://console.groq.com](https://console.groq.com)
