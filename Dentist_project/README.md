@@ -21,6 +21,11 @@ The main goal is to evaluate the quality of automatic speech-to-text transcripti
   - Negation Detection Accuracy
   - Unit Accuracy
   - Sentence Count Difference
+  - Named Entity Recognition (NER) - Precision, Recall, F1 Score
+  - Clinical Coherence Score
+  - Completeness Rate
+  - Punctuation Accuracy
+  - Section Heading Accuracy
 
 ##  Project Structure
 
@@ -51,7 +56,12 @@ dentist_project/
 │   ├── laterality_accuracy.py
 │   ├── negation_accuracy.py
 │   ├── unit_accuracy.py
-│   └── sentence_diff.py
+│   ├── sentence_diff.py
+│   ├── ner.py                  # Named Entity Recognition
+│   ├── clinical_coherence.py   # Clinical Flow Coherence
+│   ├── completness_rate.py    # Completeness Rate
+│   ├── punctuation_accuracy.py # Punctuation Accuracy
+│   └── section_accuracy.py     # Section Heading Accuracy
 │
 └── README.md
 ```
@@ -101,14 +111,19 @@ python laterality_accuracy.py
 python negation_accuracy.py
 python unit_accuracy.py
 python sentence_diff.py
+python ner.py                    # Named Entity Recognition
+python clinical_coherence.py     # Clinical Coherence
+python completness_rate.py       # Completeness Rate
+python punctuation_accuracy.py   # Punctuation Accuracy
+python section_accuracy.py       # Section Heading Accuracy
 ```
 
 Or run all metrics at once:
 ```bash
-python wer.py && python cer.py && python medical_term_error_rate.py && python medication_dosage_accuracy.py && python numeric_accuracy.py && python laterality_accuracy.py && python negation_accuracy.py && python unit_accuracy.py && python sentence_diff.py
+python wer.py && python cer.py && python medical_term_error_rate.py && python medication_dosage_accuracy.py && python numeric_accuracy.py && python laterality_accuracy.py && python negation_accuracy.py && python unit_accuracy.py && python sentence_diff.py && python ner.py && python clinical_coherence.py && python completness_rate.py && python punctuation_accuracy.py && python section_accuracy.py
 ```
 
-## 📊 Metrics Explained
+## Metrics Explained
 
 - **WER (Word Error Rate)**: Measures the percentage of words incorrectly transcribed
 - **CER (Character Error Rate)**: Measures the percentage of characters incorrectly transcribed
@@ -119,4 +134,9 @@ python wer.py && python cer.py && python medical_term_error_rate.py && python me
 - **Negation Accuracy**: Validates correct transcription of negation words
 - **Unit Accuracy**: Ensures measurement units are transcribed correctly
 - **Sentence Count Difference**: Compares the number of sentences between ground truth and transcript
+- **NER (Named Entity Recognition)**: Evaluates precision, recall, and F1 score for dental domain entities (tooth, gum, abscess, medications, etc.)
+- **Clinical Coherence Score**: Measures how well the transcript captures the clinical flow (pain, diagnosis, treatment, medication, follow-up)
+- **Completeness Rate**: Calculates the percentage of words from ground truth that are present in the transcript
+- **Punctuation Accuracy**: Validates correct transcription of end punctuation marks (periods, exclamation marks, question marks) in critical contexts
+- **Section Heading Accuracy**: Checks if important section headings (chief complaint, diagnosis, treatment plan, prescription, follow-up) are correctly transcribed
 
